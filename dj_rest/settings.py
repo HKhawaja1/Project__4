@@ -30,7 +30,7 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['italian-restaurant-389da55a8bf9.herokuapp.com']
+ALLOWED_HOSTS = ['project-4-italian-restaurant-2f77a266eecf.herokuapp.com']
 
 
 # Application definition
