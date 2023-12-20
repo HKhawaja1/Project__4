@@ -35,7 +35,6 @@ body {
 
 .row ul {
     list-style-type: none;
-
     padding: 0;
 }
 
@@ -51,19 +50,12 @@ input[type="text"],
 select,
 textarea {
     width: 100%;
-
     padding: 12px;
-
     border: 1px solid #ccc;
-
     border-radius: 4px;
-
     box-sizing: border-box;
-
     margin-top: 6px;
-
     margin-bottom: 16px;
-
     resize: vertical;
 }
 
@@ -84,4 +76,52 @@ input[type="submit"]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+#menu {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#menu h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #333;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+#menu li span {
+    font-weight: bold;
+    color: #333;
+}
+
+#menu li p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+#menu li:hover {
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease
 }
