@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import Config
 from dotenv import load_dotenv
 
 load_dotenv()  # Load Environment Variables From .env File
@@ -81,10 +82,15 @@ WSGI_APPLICATION = 'dj_rest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('HEROKU_DATABASE_NAME'),
+        'USER': os.environ.get('HEROKU_DATABASE_USER'),
+        'PASSWORD': os.environ.get('HEROKU_DATABASE_PASSWORD'),
+        'HOST': os.environ.get('HEROKU_DATABASE_HOST'),
+        'PORT': os.environ.get('HEROKU_DATABASE_PORT'),
     }
 }
 

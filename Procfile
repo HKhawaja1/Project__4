@@ -1,1 +1,1 @@
-web: gunicorn dj_rest.wsgi:application
+web: gunicorn myapp.wsgi:application --log-file -
