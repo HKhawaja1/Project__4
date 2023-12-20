@@ -1,13 +1,15 @@
 import psycopg2
+from dotenv import load_dotenv
 
-password = "be281bccd70b488ea82b35067ccde3e3e5d030c088bdace1220c6d7269154c57"
+load_dotenv()  # Load Environment Variables From .env File
+
 
 db_config = {
-    "database": "d505v2kg3k3eq7",
-    "user": "otdttvuukmgbtg",
-    "password": password,
-    "host": "ec2-34-242-154-118.eu-west-1.compute.amazonaws.com",
-    "port": "5432"
+    "database": os.environ.get('HEROKU_DATABASE_NAME'),
+    "user": os.environ.get('HEROKU_DATABASE_USER'),
+    "password": os.environ.get('HEROKU_DATABASE_PASSWORD'),
+    "host": os.environ.get('HEROKU_DATABASE_HOST'),
+    "port": os.environ.get('HEROKU_DATABASE_PORT'),
 }
 
 
