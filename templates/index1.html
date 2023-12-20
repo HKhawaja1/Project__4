@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<header>
+    <!-- Header -->
+    <h1>Menu</h1>
+</header>
+
+<div id="menu">
+    {% for category in categories %}
+      <h2>{{ category.name }} 
+        <a href="{{ url_for('category.delete', category_name=category.name) }}">Delete</a>
+        <a href="{{ url_for('category.update', category_name=category.name) }}">Update</a>
+      </h2>
+      <ul>
+        {% for item in category.menu_items %}
+          {% if item.category == category %}
+          <li>
+            <div class="menu-item">
+                <div class="top-level">
+                    <span class="item-name">{{ item.name }}</span>
+                    <strong class="item-price">€{{ item.price }}</strong>
+                </div>
+                <div class="middle-level">
+                    <p class="item-description">{{ item.description }}</p>
+                </div>
+                <div class="low-level">
+                    <a href="{{ url_for('menu.delete', item_name=item.name) }}">Delete</a>
+                    <a href="{{ url_for('menu.update', item_name=item.name) }}">Update</a>
+                </div>
+            </div>
+          </li>                     
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endfor %}
+</div>
+<button><a href="{{ url_for('category.add') }}">Add Category</a></button>
+<button><a href="{{ url_for('menu.add') }}">Add Menu Item</a></button>
+<br>
+<div id="bookings">
+  <h1>Booking</h1>
+  <div id="Bookings">
+      <div class="booking-container">
+          {% for booking in bookings %}
+              <div class="booking-item">
+                  <div class="top-level">
+                      <span class="guest-name">Client : {{ booking.guest_name }}</span>
+                      <strong class="num-guests">Guest number :{{ booking.num_guests }}</strong>
+                  </div>
+                  <div class="middle-level">
+                      <span class="date-time">{{ booking.date }} {{ booking.time }}</span>
+                  </div>
+                  <div class="low-level">
+                      <a href="{{ url_for('booking.delete', guest_name=booking.guest_name, num_guests=booking.num_guests) }}">Delete</a>
+                      <a href="{{ url_for('booking.update', guest_name=booking.guest_name, num_guests=booking.num_guests) }}">Update</a>
+                  </div>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+  <button><a href="{{ url_for('booking.add') }}">Book Now</a></button>
+</div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

@@ -125,3 +125,59 @@ input[type="submit"]:hover {
     background-color: #f2f2f2;
     transition: background-color 0.3s ease
 }
+
+.required {
+    color: red;
+    margin-left: 3px;
+  }
+  
+  /* Style for form labels */
+  form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.edit_btn{
+    background: green;
+}
+.delete_btn{
+    background: red;
+}
+.btn{
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+.subt{
+    margin-top: 65px;
+    border-radius: 0px;
+    text-decoration: none;
+    /* background: #7ad48e; */
+    border: none;
+    /* color: #fff;*/
+}
+.subt:hover{
+    color: #45a049;
+    text-decoration: none;
+}
+.subt a{
+    text-decoration: none
+}

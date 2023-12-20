@@ -176,6 +176,39 @@
             <p>Dry sparkling wine, perfect for any celebration.</p>
         </li>
     </ul>
-</div> 
+</div>
+<h1>Menu</h1>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Number of Guests</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Actions</th>
+    </tr>
+    {% for booking in bookings %}
+    <tr>
+        <td>{{ booking[1] }}</td>  
+        <td>{{ booking[2] }}</td>
+        <td>{{ booking[3] }}</td>  
+        <td>{{ booking[4] }}</td>
+        <td>{{ booking[5] }}</td>
+        <td class="tb_action">
+            <button class="btn edit_btn"><a href="{{ url_for('update', id=booking[0]) }}">Update</a></button>
+            <button class="btn delete_btn"><a href="{{ url_for('delete', id=booking[0]) }}">Delete</a></button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<button class="subt"><a href="{{ url_for('create') }}">Book Now</a></button>
+<br>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
 {% endblock %}
