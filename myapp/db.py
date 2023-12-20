@@ -7,11 +7,11 @@ load_dotenv()
 
 # Details For Connecting To PostgreSQL Database
 db_config = {
-    "database": os.environ.get("DATABASE_NAME"),
-    "user": os.environ.get("DATABASE_USER"),
-    "password": os.environ.get("DATABASE_PASSWORD"),
-    "host": os.environ.get("DATABASE_HOST"),
-    "port": os.environ.get("DATABASE_PORT")
+    "database": os.environ.get("HEROKU_DATABASE_NAME"),
+    "user": os.environ.get("HEROKU_DATABASE_USER"),
+    "password": os.environ.get("HEROKU_DATABASE_PASSWORD"),
+    "host": os.environ.get("HEROKU_DATABASE_HOST"),
+    "port": os.environ.get("HEROKU_DATABASE_PORT")
 }
 
 
